@@ -1,0 +1,18 @@
+networks:
+   prod:
+
+services:
+   frontend:
+      build:
+         context: .
+      ports:
+         - 80:80
+      volumes:
+         - "./nginx.conf:/etc/nginx/nginx.conf"
+      develop:
+         watch:
+            - path: ./
+              target: /app
+              action: sync
+      networks:
+         - prod
