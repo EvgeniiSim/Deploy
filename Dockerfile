@@ -4,7 +4,7 @@ FROM node:${NODE_VERSION}-alpine as build
 
 WORKDIR /app
  
-COPY package*.json /app/package*.json
+COPY package.json package.json
 
 # RUN yarn add vite -D
 
